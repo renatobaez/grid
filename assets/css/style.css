@@ -15,7 +15,7 @@ body{
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	background-color: #E7E7E7;
 	display: grid;
-	grid-template-columns: auto 95%;
+	grid-template-columns: 15vw 90vw;
 	grid-template-areas:
 	"header header"
 	"aside main"
@@ -58,20 +58,23 @@ li {
 main{
 	grid-area: main;
 	display: grid;
-	justify-content: center;
-	grid-template-columns: 20% 20% 20%;
+	justify-content: flex-start;
+	grid-template-columns: auto auto auto;
 	gap:20px;
-	margin-top: 20px;
+	margin: 20px 0 20px 20px;
 }
 
 figure {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content:space-between;
 	background-color:white;
 }
 
+figure img{
+	max-height: 60%;
+}
 button {
 	background-color: #25527B;
 	border-color: #25527B;
