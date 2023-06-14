@@ -13,33 +13,32 @@ h4 {
 
 body{
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	background-color: #E7E7E7;
 	display: grid;
-	grid-template-columns: 15vw 90vw;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
 	"header header"
 	"aside main"
 	"footer footer";
+	background-color: #E7E7E7;
 }
 
 header{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 1%;
 	grid-area: header;
 	background-color: #25527B;
 	color: white;
+	padding: 1em 0;
+	text-align: center;
+	width: 100%;
 }
 
-aside{
+aside {
 	grid-area: aside;
 	display: flex;
 	flex-direction: column;
 	width: 110px;
 	padding-top: 20px;
 	padding-left: 10px;
-	min-height: 90vh;
 }
 
 aside ul{
@@ -47,34 +46,43 @@ aside ul{
 	list-style:none;
 }
 
-ul span{
+
+
+aside ul li {
+	margin-top: 5px;
+}
+aside ul span{
 	font-size: 15px;
 	opacity: 50%;
 }
-li {
-	margin-top: 5px;
-}
-
 main{
 	grid-area: main;
+	min-height: 80vh;
+}
+.products{
 	display: grid;
-	justify-content: flex-start;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(280px, 1fr)
+	);
 	gap:20px;
 	margin: 20px 0 20px 20px;
 }
 
-figure {
+.product {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content:space-between;
+	justify-content: space-between;
 	background-color:white;
+	max-width: 250px;
+	max-height: 350px;
 }
 
-figure img{
-	max-height: 60%;
+img {
+	height: 60%;
 }
+
 button {
 	background-color: #25527B;
 	border-color: #25527B;
@@ -84,6 +92,7 @@ button {
 	padding: 2%;
 	font-size: larger;
 }
+
 button:hover{
 	background-color: #E7E7E7;
 	color: black;
@@ -92,8 +101,7 @@ button:hover{
 footer{
 	grid-area: footer;
 	background-color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 30px;
+	padding: 1em 0;
+	text-align: center;
+	width: 100%;
 }
